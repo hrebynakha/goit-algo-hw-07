@@ -12,12 +12,15 @@ from main import root, positions, G
 right_nodes = []
 fig, ax = plt.subplots(figsize=(20, 15))
 
-def get_max(node, ):
+def get_max(node,):
     """Get maximum value in tree"""
     right_nodes.append(node.val)
     if node.right:
-        get_max(node.right)
-    return node.val
+        maximum = get_max(node.right)
+    else:
+        maximum = node.val
+    return maximum
+
 
 def update(frame,):
     """ Update frame"""

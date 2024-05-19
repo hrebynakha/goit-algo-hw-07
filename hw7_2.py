@@ -14,10 +14,13 @@ fig, ax = plt.subplots(figsize=(20, 15))
 
 def get_min(node, ):
     """Get minimum value"""
-    left_nodes.append(node.val)
-    if node.left:
-        get_min(node.left )
-    return node.val
+    current_node = node
+    while current_node.left:
+        left_nodes.append(current_node.val)
+        current_node = current_node.left
+    left_nodes.append(current_node.val)
+    return current_node.val
+
 
 def update(frame,):
     """ Update frame"""
